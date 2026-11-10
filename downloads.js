@@ -1,100 +1,83 @@
 'use strict';
-// Configuration des téléchargements.
-// Pendant la bêta pilote, `enabled` reste à false : les boutons ouvrent une demande d'accès par e-mail.
-// Pour ouvrir les téléchargements : publier une version GitHub (Releases) avec ces fichiers,
-// renseigner les empreintes SHA-256, puis passer `enabled` à true.
-const RELEASE = {
-  enabled: false,
-  version: '0.9.0',
-  base: 'https://github.com/raphaelflipo/la-boussole/releases/download/v0.9.0/',
-  files: {
-    mac: { name: 'LaBoussole-v0.9-macOS.zip', sha256: '' },
-    windows: { name: 'LaBoussole-v0.9-Windows.zip', sha256: '' },
-    android: { name: 'LaBoussole-v0.9-Android.apk', sha256: '' }
-  }
+/* Renseigner chaque plateforme séparément après vérification du fichier ou du lien.
+   Aucun téléchargement n'est proposé tant que verified n'est pas true.
+   Fichier : URL HTTPS + version + SHA-256 de 64 caractères obligatoires.
+   iOS : lien TestFlight/App Store vérifié, ou fichier avec empreinte (distribution adaptée requise).
+   Voir README.md. Aucune URL de fichier future n'est construite automatiquement. */
+const RELEASES = {
+  mac: { version: '', url: '', sha256: '', delivery: 'file', verified: false },
+  windows: { version: '', url: '', sha256: '', delivery: 'file', verified: false },
+  android: { version: '', url: '', sha256: '', delivery: 'file', verified: false },
+  ios: { version: '', url: '', sha256: '', delivery: 'store', verified: false }
 };
-
 const CONTACT = 'r.flipob@gmail.com';
-const LABELS = { mac: 'Mac', windows: 'Windows', android: 'Android', ios: 'iPhone ou iPad', linux: 'Linux', other: 'cet appareil' };
-
+const LABELS = { mac: 'macOS', windows: 'Windows', android: 'Android', ios: 'iPhone et iPad', linux: 'Linux', other: 'cet appareil' };
 function detectPlatform() {
   const ua = navigator.userAgent || '';
   const platform = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '';
-  if (/iPhone|iPad|iPod/i.test(ua)) return 'ios';
-  // iPadOS se présente comme un Mac : on le reconnaît à l'écran tactile.
-  if (/Mac/i.test(platform) && navigator.maxTouchPoints > 1) return 'ios';
+  if (/iPhone|iPad|iPod/i.test(ua) || (/Mac/i.test(platform) && navigator.maxTouchPoints > 1)) return 'ios';
   if (/Android/i.test(ua)) return 'android';
   if (/Win/i.test(platform) || /Windows/i.test(ua)) return 'windows';
   if (/Mac/i.test(platform) || /Macintosh/i.test(ua)) return 'mac';
   if (/Linux|CrOS/i.test(platform) || /Linux/i.test(ua)) return 'linux';
   return 'other';
 }
-
+function verifiedRelease(key) {
+  const item = RELEASES[key];
+  if (!item || item.verified !== true || !item.version.trim()) return null;
+  try {
+    const url = new URL(item.url);
+    if (url.protocol !== 'https:' || url.username || url.password) return null;
+    if (item.delivery === 'store') {
+      if (key !== 'ios' || !['testflight.apple.com', 'apps.apple.com'].includes(url.hostname)) return null;
+    } else if (item.delivery !== 'file' || !/^[a-f0-9]{64}$/i.test(item.sha256)) return null;
+    return item;
+  } catch (_) { return null; }
+}
 function requestLink(os) {
-  const subject = 'Accès pilote La Boussole — ' + LABELS[os];
-  const body = "Bonjour,\n\nNotre association souhaite tester La Boussole.\n\nType d'association : \nNombre approximatif de membres : \nAppareil utilisé : " + LABELS[os] + '\n\nMerci !';
+  const subject = 'Disponibilité de La Boussole — ' + LABELS[os];
+  const body = 'Bonjour,\n\nJe souhaite connaître l’avancement de La Boussole pour ' + LABELS[os] + '.\n\nMerci !';
   return 'mailto:' + CONTACT + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
 }
-
-function downloadLink(os) {
-  return RELEASE.base + RELEASE.files[os].name;
+function releaseLabel(key, item) {
+  if (item.delivery === 'store') return new URL(item.url).hostname === 'testflight.apple.com' ? 'Voir la version TestFlight' : 'Voir sur l’App Store';
+  return 'Télécharger pour ' + LABELS[key];
 }
-
-function setup() {
+function setupDownloads() {
   const os = detectPlatform();
-  const downloadable = ['mac', 'windows', 'android'];
-
-  for (const key of downloadable) {
+  Object.keys(RELEASES).forEach(key => {
     const button = document.querySelector('[data-dl="' + key + '"]');
-    if (!button) continue;
-    if (RELEASE.enabled) {
-      button.href = downloadLink(key);
-      button.textContent = 'Télécharger pour ' + LABELS[key];
-      button.setAttribute('download', '');
-      const sha = document.querySelector('[data-sha="' + key + '"]');
-      if (sha && RELEASE.files[key].sha256) {
-        sha.textContent = 'SHA-256 : ' + RELEASE.files[key].sha256;
-        sha.hidden = false;
-      }
-    } else {
-      button.href = requestLink(key);
-    }
-  }
-
+    if (!button) return;
+    const item = verifiedRelease(key);
+    button.href = item ? item.url : requestLink(key);
+    button.textContent = item ? releaseLabel(key, item) : 'Demander des nouvelles';
+    const status = document.querySelector('[data-release-status="' + key + '"]');
+    if (status && item) status.textContent = 'Version ' + item.version + ' · ' + (item.delivery === 'store' ? 'Distribution Apple' : 'Fichier disponible');
+    const sha = document.querySelector('[data-sha="' + key + '"]');
+    if (sha && item && item.sha256) { sha.textContent = 'SHA-256 : ' + item.sha256; sha.hidden = false; }
+  });
   const card = document.querySelector('.pf[data-os="' + os + '"]');
   if (card) card.classList.add('current');
-
-  const title = document.getElementById('detect-title');
-  const text = document.getElementById('detect-text');
-  const btn = document.getElementById('detect-btn');
   const label = document.getElementById('detect-label');
-  const fine = document.getElementById('detect-fine');
-
-  if (downloadable.includes(os)) {
-    label.textContent = 'Votre appareil : ' + LABELS[os];
-    if (RELEASE.enabled) {
-      title.textContent = 'La Boussole ' + RELEASE.version + ' pour ' + LABELS[os];
-      btn.textContent = 'Télécharger pour ' + LABELS[os];
-      btn.href = downloadLink(os);
-      btn.setAttribute('download', '');
-      fine.textContent = 'Version bêta. Consultez les étapes d’installation plus bas pour le premier lancement.';
-    } else {
-      title.textContent = 'La Boussole pour ' + LABELS[os];
-      text.textContent = 'La version ' + LABELS[os] + ' est disponible pour les associations pilotes. Demandez votre accès : vous recevrez le lien et un accompagnement pour votre premier événement.';
-      btn.textContent = 'Demander l’accès pour ' + LABELS[os];
-      btn.href = requestLink(os);
-    }
-  } else if (os === 'ios') {
-    label.textContent = 'Votre appareil : ' + LABELS.ios;
-    title.textContent = 'La version iPhone arrive plus tard';
-    text.textContent = 'Apple impose l’App Store pour installer une application sur iPhone. En attendant, La Boussole fonctionne sur Mac, Windows et Android, et la démo s’ouvre dans votre navigateur.';
-    btn.textContent = 'Être prévenu de la sortie';
-    btn.href = 'mailto:' + CONTACT + '?subject=' + encodeURIComponent('Me prévenir — La Boussole iPhone');
+  const title = document.getElementById('detect-title');
+  const detail = document.getElementById('detect-text');
+  const button = document.getElementById('detect-btn');
+  if (!label || !title || !detail || !button) return;
+  label.textContent = 'Appareil détecté : ' + LABELS[os];
+  const item = verifiedRelease(os);
+  if (item) {
+    title.textContent = 'La Boussole ' + item.version + ' pour ' + LABELS[os];
+    detail.textContent = 'Consultez les informations de cette version avant l’installation. Le logiciel reste en développement.';
+    button.textContent = releaseLabel(os, item);
+    button.href = item.url;
+  } else if (Object.hasOwn(RELEASES, os)) {
+    title.textContent = LABELS[os] + ' : disponibilité à confirmer';
+    detail.textContent = 'Cette plateforme fait partie des objectifs du projet. Aucun fichier public ni accès de test ouvert n’est proposé ici actuellement.';
+    button.textContent = 'Demander des nouvelles';
+    button.href = requestLink(os);
   } else {
-    label.textContent = 'Votre appareil : ' + LABELS[os];
-    title.textContent = 'Pas encore de version pour ' + LABELS[os];
-    text.textContent = 'La Boussole est disponible sur Mac, Windows et Android. Choisissez la plateforme qui vous convient ci-dessous.';
+    title.textContent = 'Choisissez votre plateforme';
+    detail.textContent = 'Le projet vise macOS, Windows, iOS et Android. La démonstration fictive reste accessible dans le navigateur.';
   }
 }
-
-document.addEventListener('DOMContentLoaded', setup);
+document.addEventListener('DOMContentLoaded', setupDownloads);
