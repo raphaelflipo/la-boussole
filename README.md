@@ -8,7 +8,7 @@ HTML, CSS et JavaScript statiques, sans compilation ni service payant. Aucun pai
 
 ## État présenté
 
-- Logiciel en développement ; version 0.9 et macOS, Windows, iOS, Android visés.
+- RC4 : démonstration privée, validation partielle détaillée par plateforme. Aucun pilote réel ni abonnement ouvert.
 - Aucun paquet d’installation public ni accès TestFlight/App Store vérifié au 10 novembre 2026.
 - La démo fonctionne avec des scénarios fictifs dans la mémoire du navigateur.
 - Les prix 0 €, 19 €/mois et 49 €/mois sont prévus, avec abonnements simulés.
@@ -49,3 +49,9 @@ Copier les fichiers de ce dossier à la racine du dépôt `raphaelflipo/la-bouss
 Baseline de cette révision : `222db96151b2c59339259953807ae1aa740fb771`.
 
 © 2026 Raphaël Flipo. Tous droits réservés.
+
+## Préparation RC4
+
+Changements préparés localement le 12 novembre 2026. Aucun push ni publication GitHub Pages effectué pour ce lot. La branche `main` est la source du site public : sa publication nécessite une autorisation distincte. Les captures identifient le produit et leur portée ; aucun chemin local ou mot de passe ne doit devenir un lien public.
+
+Contrôle local final : 12 pages, liens/ancres et images contrôlés ; aperçu à 390 et 1440 px et navigation clavier ciblée. Captures natives 55f9c87 (lecture iOS) et 034d379 (tableau Mac). Pas de publication.

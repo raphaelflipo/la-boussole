@@ -71,8 +71,8 @@ function setupDownloads() {
     button.textContent = releaseLabel(os, item);
     button.href = item.url;
   } else if (Object.hasOwn(RELEASES, os)) {
-    title.textContent = LABELS[os] + ' : disponibilité à confirmer';
-    detail.textContent = 'Cette plateforme fait partie des objectifs du projet. Aucun fichier public ni accès de test ouvert n’est proposé ici actuellement.';
+    title.textContent = LABELS[os] + ' : démonstration privée';
+    detail.textContent = 'Consultez ci-dessous la portée des contrôles RC4 sur cette plateforme. Aucun fichier public ni inscription ouverte n’est proposé ici.';
     button.textContent = 'Demander des nouvelles';
     button.href = requestLink(os);
   } else {
