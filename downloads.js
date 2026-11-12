@@ -72,7 +72,7 @@ function setupDownloads() {
     button.href = item.url;
   } else if (Object.hasOwn(RELEASES, os)) {
     title.textContent = LABELS[os] + ' : démonstration privée';
-    detail.textContent = 'Consultez ci-dessous la portée des contrôles RC4 sur cette plateforme. Aucun fichier public ni inscription ouverte n’est proposé ici.';
+    detail.textContent = 'Consultez ci-dessous la portée des contrôles 1.0 sur cette plateforme. Aucun fichier public ni inscription ouverte n’est proposé ici.';
     button.textContent = 'Demander des nouvelles';
     button.href = requestLink(os);
   } else {

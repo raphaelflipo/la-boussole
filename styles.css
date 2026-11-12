@@ -65,3 +65,7 @@ header.wrap{position:relative;z-index:10}
 /* Captures natives et parcours de validation. */
 .journey{padding-left:1.5rem;max-width:850px}.journey li{padding:0 0 1rem .5rem}.capture{margin:2rem 0}.capture img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:16px}.capture figcaption{font-size:.9rem;color:var(--muted);margin-top:.7rem}.capture.narrow{max-width:700px}.table-scroll{overflow-x:auto;max-width:100%}.evidence-table{border-collapse:collapse;width:100%;margin:1rem 0}.evidence-table th,.evidence-table td{padding:.8rem;text-align:left;border-bottom:1px solid var(--line)}.evidence-table caption{text-align:left;font-size:.9rem;color:var(--muted)}.table-scroll:focus-visible{outline:3px solid var(--green);outline-offset:4px}
 @media(max-width:700px){.wrap.section{padding-left:20px;padding-right:20px}.evidence-table th,.evidence-table td{padding:.6rem}.capture{margin:1.5rem 0}}
+
+/* Keep the page introduction aligned with the shared content margins. */
+.wrap.page-head{padding-left:32px;padding-right:32px}
+@media(max-width:700px){.wrap.page-head{padding-left:20px;padding-right:20px}}
