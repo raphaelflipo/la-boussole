@@ -53,3 +53,7 @@ Baseline de cette révision : `222db96151b2c59339259953807ae1aa740fb771`.
 ## Référence 1.0
 
 Mise à jour autorisée du site existant, à visibilité inchangée. Les paquets et sources de l’application restent privés. Aucun fichier ancien n’est proposé au téléchargement ; la page de disponibilité distingue Mac, Android, Windows et l’installation personnelle iPhone. La capture Mac 1.0 montre le scénario familial fictif réellement vérifié. Les pages de compte Firebase, la simulation locale et la charte existante sont conservées.
+
+La refonte graphique et la navigation mobile du commit 8f37d8b ont été intégrées à la référence 1.0, sans remplacement des pages de compte ni des paramètres Firebase. Les polices proviennent du répertoire `/fonts/` du portfolio sur le même domaine.
+
+Contrôles 1.0 : 12 pages et 266 liens locaux, syntaxe JavaScript, 11 pages affichées à 390 et 1440 px sans débordement horizontal. Menu mobile ouvert puis fermé avec Échap, thèmes clair/sombre, contrastes des textes principaux supérieurs à 5,3:1, grossissement visuel 200 % puis restauration. Aucun service worker.
