@@ -57,3 +57,14 @@ Mise à jour autorisée du site existant, à visibilité inchangée. Les paquets
 La refonte graphique et la navigation mobile du commit 8f37d8b ont été intégrées à la référence 1.0, sans remplacement des pages de compte ni des paramètres Firebase. Les polices proviennent du répertoire `/fonts/` du portfolio sur le même domaine.
 
 Contrôles 1.0 : 12 pages et 266 liens locaux, syntaxe JavaScript, 11 pages affichées à 390 et 1440 px sans débordement horizontal. Menu mobile ouvert puis fermé avec Échap, thèmes clair/sombre, contrastes des textes principaux supérieurs à 5,3:1, grossissement visuel 200 % puis restauration. Aucun service worker.
+
+
+## Refonte mobile 1.0 — captures et vérifications du 12 novembre 2026
+
+La refonte Qt 6/QML est présentée avec son périmètre de validation. Les cinq emplacements de `parcours.html#mobile` portent les attributs `data-native-shot` : `home`, `event`, `ride`, `family`, `organizer`. Les cinq images proviennent du produit iOS build 10006 sur simulateur iPhone 18 Pro sous iOS 27.2. Elles sont encodées en WebP sans perte, sans redimensionnement, avec identité des pixels décodés vérifiée. Aucun écran synthétique ni capture QML de bureau n'est présenté comme capture de téléphone. La galerie porte `data-native-captures="verified-simulator"`.
+
+Les images fournies ont leurs dimensions réelles, un texte alternatif descriptif et une légende indiquant simulateur, plateforme et build. Leur rendu a été vérifié dans Chrome sur ordinateur et au format 375 × 667, en modes clair et sombre. Le menu mobile et sa fermeture avec Échap ont été contrôlés. Conserver les données fictives et ne pas publier identifiant personnel, secret ni document d'exploitation privé. La validation du seul écran ne prouve pas un parcours réseau complet.
+
+La page de confidentialité distingue les fonctions techniques observées de la politique finale à valider. Le brouillon détaillé et le manifeste des captures restent hors de ce dépôt public. Les prix demeurent indicatifs ; aucun paiement, téléchargement ni inscription publique n'est activé par ces modifications. Les statuts par plateforme proviennent des vérifications natives : parcours croisé iOS Simulator / émulateur Android, lancement iPhone physique accepté mais parcours physique incomplet, démarrage Mac ARM/Rosetta, Windows non construit. Aucun gain de performance Android n’est annoncé.
+
+Contrôles de cette mise à jour : 12 pages, 279 liens et ancres locaux résolus, 7 images avec textes alternatifs et dimensions, 6 scripts existants syntaxiquement valides. Les cinq WebP totalisent 678 806 octets contre 1 849 742 octets pour les PNG d’origine, à pixels identiques. Les scripts, les pages d’action de compte et la charte antérieure sont préservés.
