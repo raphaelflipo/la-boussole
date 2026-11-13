@@ -1,5 +1,4 @@
 'use strict';
-// Données exclusivement fictives ; aucun réseau, stockage persistant, compte ou paiement.
 (() => {
   const definitions = {
     alpha: {name:'Les Sentiers',type:'Groupe scout fictif',description:'Une sortie nature, des départs faciles à retrouver.',plan:'Association',limits:{members:150,groups:5,events:100,rides:300,admins:1},members:12,groups:2,events:[{id:'nature',title:'Journée au grand air',when:'Samedi · 09:00',where:'Parc des Tilleuls (fictif)'},{id:'atelier',title:'Préparer le camp ensemble',when:'Dimanche · 14:00',where:'Maison des associations (fictif)'}],rides:[{id:'a1',event:'nature',driver:'Camille',origin:'Place du village (fictif)',capacity:3,reserved:1},{id:'a2',event:'nature',driver:'Alex',origin:'Parking du stade (fictif)',capacity:2,reserved:1},{id:'a3',event:'atelier',driver:'Sam',origin:'Maison des associations (fictif)',capacity:2,reserved:0}]},

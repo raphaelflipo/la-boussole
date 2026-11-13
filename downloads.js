@@ -1,9 +1,5 @@
 'use strict';
-/* Renseigner chaque plateforme séparément après vérification du fichier ou du lien.
-   Aucun téléchargement n'est proposé tant que verified n'est pas true.
-   Fichier : URL HTTPS + version + SHA-256 de 64 caractères obligatoires.
-   iOS : lien TestFlight/App Store vérifié, ou fichier avec empreinte (distribution adaptée requise).
-   Voir README.md. Aucune URL de fichier future n'est construite automatiquement. */
+
 const RELEASES = {
   mac: { version: '', url: '', sha256: '', delivery: 'file', verified: false },
   windows: { version: '', url: '', sha256: '', delivery: 'file', verified: false },
