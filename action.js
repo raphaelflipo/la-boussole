@@ -1,5 +1,3 @@
-// Page d'action Firebase Authentication aux couleurs de La Boussole :
-// vérification d'adresse e-mail, réinitialisation et récupération d'adresse.
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js';
 import {
   getAuth, applyActionCode, checkActionCode, verifyPasswordResetCode, confirmPasswordReset
