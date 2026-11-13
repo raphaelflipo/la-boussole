@@ -1,0 +1,14 @@
+name: Contrôles du site
+on:
+  push:
+    branches: [refonte-identite-verte-2026, main]
+  pull_request:
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/audit.mjs
