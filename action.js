@@ -7,6 +7,12 @@ const params = new URLSearchParams(location.search);
 const mode = params.get('mode');
 const code = params.get('oobCode');
 const apiKey = params.get('apiKey');
+const validAction = ['verifyEmail', 'resetPassword', 'recoverEmail'].includes(mode);
+const validCode = typeof code === 'string' && /^[A-Za-z0-9_-]{1,4096}$/.test(code);
+const validKey = typeof apiKey === 'string' && /^AIza[0-9A-Za-z_-]{35}$/.test(apiKey);
+if (validAction && validCode && validKey) {
+  history.replaceState(history.state, '', location.pathname);
+}
 const $ = (id) => document.getElementById(id);
 
 function show(state, title, text) {
@@ -26,7 +32,7 @@ function friendly(error) {
 }
 
 async function run() {
-  if (!mode || !code || !apiKey) {
+  if (!validAction || !validCode || !validKey) {
     show('error', 'Lien incomplet', 'Ouvrez directement le lien reçu par e-mail, sans le modifier.');
     return;
   }
