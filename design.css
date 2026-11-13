@@ -142,7 +142,6 @@ body>header{position:sticky;top:0;z-index:15;background:var(--cream);border-bott
 
 .wrap.section,.wrap.page-head{padding-inline:0}
 
-/* Native mobile evidence uses the existing palette and type scale. */
 .mobile-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:42px;align-items:start}
 .mobile-capture{margin:0;min-width:0;padding-top:22px;border-top:1px solid var(--line)}
 .mobile-capture>a{display:block;max-width:320px;margin:0 auto 24px;cursor:zoom-in}
