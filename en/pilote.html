@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light dark">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <title>Private pilot preparation guide — La Boussole</title>
+  <meta name="description" content="Prepare a private La Boussole trial with fictional scenarios, a device validation checklist, feedback questions and privacy preparation.">
+  <link rel="canonical" href="https://raphaelflipo.github.io/la-boussole/en/pilote.html">
+  <link rel="alternate" hreflang="fr" href="https://raphaelflipo.github.io/la-boussole/pilote.html">
+  <link rel="alternate" hreflang="en" href="https://raphaelflipo.github.io/la-boussole/en/pilote.html">
+  <link rel="alternate" hreflang="x-default" href="https://raphaelflipo.github.io/la-boussole/pilote.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:title" content="Private pilot preparation guide — La Boussole">
+  <meta property="og:description" content="Fictional scenarios, validation criteria and prerequisites for a private trial.">
+  <meta property="og:url" content="https://raphaelflipo.github.io/la-boussole/en/pilote.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <script src="../theme.js?v=1"></script>
+  <link rel="stylesheet" href="../styles.css?v=5">
+  <link rel="stylesheet" href="../design.css?v=20261112-mobile1">
+  <script src="../navigation.js?v=20261112" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenu">Skip to content</a>
+  <div class="topline"><a href="https://raphaelflipo.github.io/en/">Raphaël Flipo’s portfolio</a><span>La Boussole 1.0 · Private demo</span><a href="../pilote.html" hreflang="fr" lang="fr">Français</a></div>
+  <header class="wrap">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="./">La Boussole</a>
+      <div class="nav-tools"><button type="button" class="theme-toggle" aria-label="Change theme" hidden>◐</button><button type="button" class="menu-toggle" aria-controls="product-navigation" aria-expanded="false" hidden>Menu</button></div>
+      <div class="navlinks" id="product-navigation"><a href="fonctionnalites.html">Features</a><a href="demo.html">Demo</a><a href="faq.html">FAQ</a><a href="pilote.html" aria-current="page">Pilot guide</a><a class="btn small" href="telecharger.html">Availability</a></div>
+    </nav>
+  </header>
+  <main tabindex="-1" id="contenu" class="wrap pilot-guide">
+    <header class="page-head">
+      <h1>Prepare a private pilot</h1>
+      <p class="lede">Plan departures, find friction in seat booking and test group roles before considering a trial with a real group.</p>
+      <p class="notice">The guide is ready for a rehearsal with fictional data. Registration, payments and testing with real data are closed.</p>
+      <nav aria-label="Guide sections"><ul class="pilot-index">
+        <li><a href="#demarrage">Getting started</a></li><li><a href="#validation">Validation</a></li><li><a href="#retours">Feedback</a></li><li><a href="#protection">Data protection</a></li>
+      </ul></nav>
+    </header>
+    <section id="demarrage">
+      <h2>Rehearse a trip before the pilot</h2>
+      <ol class="pilot-steps">
+        <li>Choose a trial contact and a fictional scenario. Assign an organiser, a driver and a passenger or household.</li>
+        <li>Create the event and publish a departure instruction. Have the driver offer an outbound or return ride with a set number of seats.</li>
+        <li>Book several seats for a household. Submit a request on a full ride, free a seat and check reassignment. Then cancel the booking.</li>
+        <li>Read the event messages from another role. Switch associations in the demo and check that the new group has its own feed.</li>
+        <li>Debrief with the trial contact and write down any blockers. Prepare the next scenario before considering invitations to the private pilot.</li>
+      </ol>
+      <div class="actions"><a class="btn" href="demo.html?role=owner#administration">Try the organiser role</a><a class="btn secondary" href="demo.html?role=parent#activites">Try household booking</a><a class="btn secondary" href="interet.html">Prepare a local scenario</a></div>
+    </section>
+    <section id="validation">
+      <h2>Validation by device</h2>
+      <p class="intro">For every attempt, record the build, device, OS version, role, scenario and outcome. Separate physical-device results from simulator and emulator results.</p>
+      <dl class="pilot-matrix">
+        <div><dt>Web</dt><dd>Check keyboard use, small screens, group isolation and the complete booking flow on the local demo.</dd></div>
+        <div><dt>macOS</dt><dd>Startup was observed on Apple Silicon and under Rosetta. Repeat the full flow on the candidate build. Testing on a physical Intel Mac is pending.</dd></div>
+        <div><dt>Windows</dt><dd>Wait for an installer from the actual candidate build. Test installation, startup, booking and uninstallation.</dd></div>
+        <div><dt>Android</dt><dd>Partial cancellation was checked in an emulator on build 10006. Confirm the round trip and synchronisation on a physical phone.</dd></div>
+        <div><dt>iOS</dt><dd>Household booking was checked in the simulator on build 10006 and startup was observed on a personal iPhone. The full flow on a physical iPhone is pending.</dd></div>
+      </dl>
+      <p><a href="telecharger.html">Check builds, devices and distribution limits</a></p>
+    </section>
+    <section id="retours">
+      <h2>Trial feedback and support</h2>
+      <div class="card">
+        <h3>Questions for the trial contact</h3>
+        <ol>
+          <li>Did you complete the task unaided, with help or get stuck?</li>
+          <li>On a scale of 1 to 5, how easy was it to find the meeting point and available seats?</li>
+          <li>Which step needed the most explanation? Which role and device were you using?</li>
+          <li>Did the confirmation on booking, cancellation or joining the waitlist match your expectations?</li>
+          <li>What would prevent you from using this part of the app on a real trip?</li>
+        </ol>
+      </div>
+      <p>For a reproducible problem, describe the steps, expected outcome and actual outcome. The trial contact can pass on the report through the private channel agreed before a pilot. Use a cropped screenshot with fictional data when it clarifies the issue. A privacy problem or inconsistent booking blocks the scenario until it is fixed and retested.</p>
+      <p>Count completed scenarios out of attempted scenarios, successful bookings out of requests, and reproduced issues by platform. State the number of trials alongside results. These are planned evaluation criteria. The site sends no telemetry and reports no pilot results.</p>
+      <p><a href="tarifs.html">See proposed commercial plans</a></p>
+    </section>
+    <section id="protection">
+      <h2>Requirements before testing with real data</h2>
+      <ul class="feature-list">
+        <li>Document the purposes, necessary data, lawful basis, responsibilities, approved hosting, rights and retention periods before entering any data.</li>
+        <li>Agree with the group how to inform families, handle permissions and establish adult responsibilities for rides involving minors. Keep children’s contact details and addresses out of the demo.</li>
+        <li>Use a public meeting point for the trial. Exclude continuous location tracking and publication of home addresses by default. Limit access to the necessary group and role.</li>
+        <li>Check access, account revocation and deletion of test data. Carry out a privacy review with the people responsible before opening a private trial with real data.</li>
+      </ul>
+      <p>References — <a href="https://www.cnil.fr/sites/cnil/files/atoms/files/cnil-guide_association.pdf">CNIL GDPR guide for associations</a>, <a href="https://www.cnil.fr/fr/node/317">CNIL recommendation on children’s rights</a> and <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj?locale=en">EU regulation, Articles 5, 8, 25 and 32</a>.</p>
+      <p><a href="confidentialite/">Read the La Boussole privacy notice</a></p>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap footer-inner"><div><strong>La Boussole</strong><br>A project by Raphaël Flipo</div><div class="footer-links"><a href="index.html">Home</a><a href="confidentialite/">Privacy</a><a href="mentions-legales.html">Legal notice</a><a href="../pilote.html" hreflang="fr" lang="fr">Français</a></div></div></footer>
+</body>
+</html>

@@ -5,7 +5,7 @@ const root=process.cwd(), files=[], errors=[];
 function walk(dir){for(const item of readdirSync(dir,{withFileTypes:true})){if(item.name==='.git'||item.name==='node_modules')continue;const file=join(dir,item.name);item.isDirectory()?walk(file):files.push(file);}}
 walk(root);
 for(const file of files){
- if(extname(file)==='.js'){
+ if(['.js','.cjs','.mjs'].includes(extname(file))){
   try{execFileSync(process.execPath,['--check',file]);}catch(error){errors.push(file+': JS invalide');}
  }
  if(extname(file)!=='.html')continue;

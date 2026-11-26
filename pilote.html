@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light dark">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <title>Guide de préparation du pilote privé — La Boussole</title>
+  <meta name="description" content="Préparer un essai privé de La Boussole avec des scénarios fictifs, une grille de validation, un modèle de retour et des points de contrôle sur la confidentialité.">
+  <link rel="canonical" href="https://raphaelflipo.github.io/la-boussole/pilote.html">
+  <link rel="alternate" hreflang="fr" href="https://raphaelflipo.github.io/la-boussole/pilote.html">
+  <link rel="alternate" hreflang="en" href="https://raphaelflipo.github.io/la-boussole/en/pilote.html">
+  <link rel="alternate" hreflang="x-default" href="https://raphaelflipo.github.io/la-boussole/pilote.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Guide de préparation du pilote privé — La Boussole">
+  <meta property="og:description" content="Scénarios fictifs, critères de validation et conditions préalables à un essai privé.">
+  <meta property="og:url" content="https://raphaelflipo.github.io/la-boussole/pilote.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="theme.js?v=1"></script>
+  <link rel="stylesheet" href="styles.css?v=5">
+  <link rel="stylesheet" href="design.css?v=20261112-mobile1">
+  <script src="navigation.js?v=20261112" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+  <div class="topline"><a href="https://raphaelflipo.github.io/">Portfolio de Raphaël Flipo</a><span>La Boussole 1.0 · Démonstration privée</span><a href="en/pilote.html" hreflang="en" lang="en">English</a></div>
+  <header class="wrap">
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="brand" href="./">La Boussole</a>
+      <div class="nav-tools"><button type="button" class="theme-toggle" aria-label="Changer de thème" hidden>◐</button><button type="button" class="menu-toggle" aria-controls="product-navigation" aria-expanded="false" hidden>Menu</button></div>
+      <div class="navlinks" id="product-navigation"><a href="fonctionnalites.html">Fonctionnalités</a><a href="demo.html">Démo</a><a href="faq.html">FAQ</a><a href="pilote.html" aria-current="page">Guide pilote</a><a class="btn small" href="telecharger.html">Disponibilité</a></div>
+    </nav>
+  </header>
+  <main tabindex="-1" id="contenu" class="wrap pilot-guide">
+    <header class="page-head">
+      <h1>Préparer un pilote privé</h1>
+      <p class="lede">Préparer les départs d’une sortie, repérer les difficultés de réservation et tester les rôles avant d’envisager un essai avec un groupe réel.</p>
+      <p class="notice">Le guide est prêt pour une répétition sur données fictives. Les inscriptions, les paiements et les essais avec des données réelles ne sont pas ouverts.</p>
+      <nav aria-label="Sections du guide"><ul class="pilot-index">
+        <li><a href="#demarrage">Démarrage</a></li><li><a href="#validation">Validation</a></li><li><a href="#retours">Retours</a></li><li><a href="#protection">Protection des données</a></li>
+      </ul></nav>
+    </header>
+    <section id="demarrage">
+      <h2>Répéter une sortie avant le pilote</h2>
+      <ol class="pilot-steps">
+        <li>Nommer un référent pour l’essai et choisir un scénario fictif. Prévoir un organisateur, un conducteur et un passager ou un foyer.</li>
+        <li>Créer l’activité et publier une consigne de départ. Le conducteur propose un aller ou un retour avec un nombre de places défini.</li>
+        <li>Réserver plusieurs places pour le foyer. Essayer une demande sur un trajet complet, libérer une place et vérifier la réattribution. Annuler ensuite la réservation.</li>
+        <li>Vérifier les messages de l’activité depuis un autre rôle. Changer d’association dans la démo et contrôler que le nouveau groupe a son propre fil.</li>
+        <li>Faire le bilan avec le référent et noter ce qui bloque. Préparer le scénario suivant avant d’envisager une invitation au pilote privé.</li>
+      </ol>
+      <div class="actions"><a class="btn" href="demo.html?role=owner#administration">Essayer le rôle organisateur</a><a class="btn secondary" href="demo.html?role=parent#activites">Essayer la réservation familiale</a><a class="btn secondary" href="interet.html">Préparer un scénario local</a></div>
+    </section>
+    <section id="validation">
+      <h2>Validation par appareil</h2>
+      <p class="intro">À chaque essai, noter le build, l’appareil, sa version système, le rôle, le scénario et le résultat. Distinguer les essais sur appareil physique, simulateur et émulateur.</p>
+      <dl class="pilot-matrix">
+        <div><dt>Web</dt><dd>Vérifier le clavier, le petit écran, l’isolement des groupes et la réservation de bout en bout avec la démo locale.</dd></div>
+        <div><dt>macOS</dt><dd>Démarrage déjà observé sur Apple Silicon et via Rosetta. Rejouer le parcours complet sur le build candidat. Mac Intel physique à valider.</dd></div>
+        <div><dt>Windows</dt><dd>Attendre un véritable paquet du build candidat. Tester installation, démarrage, réservation et désinstallation.</dd></div>
+        <div><dt>Android</dt><dd>Annulation partielle vérifiée sur émulateur avec le build 10006. Confirmer l’aller-retour et la synchronisation sur téléphone physique.</dd></div>
+        <div><dt>iOS</dt><dd>Parcours familial vérifié en simulateur avec le build 10006 et lancement observé sur un iPhone personnel. Parcours complet sur iPhone physique à valider.</dd></div>
+      </dl>
+      <p><a href="telecharger.html">Consulter les builds, appareils et limites de distribution</a></p>
+    </section>
+    <section id="retours">
+      <h2>Retour d’essai et support</h2>
+      <div class="card">
+        <h3>Questionnaire à utiliser avec le référent</h3>
+        <ol>
+          <li>Avez-vous terminé l’essai seul, avec de l’aide ou en restant bloqué ?</li>
+          <li>Sur une échelle de 1 à 5, les places et le rendez-vous étaient-ils faciles à trouver ?</li>
+          <li>Quelle étape a demandé le plus d’explications ? Avec quel rôle et sur quel appareil ?</li>
+          <li>La confirmation après réservation, annulation ou passage en attente correspondait-elle à ce que vous attendiez ?</li>
+          <li>Qu’est-ce qui vous ferait renoncer à utiliser cette fonction lors d’une vraie sortie ?</li>
+        </ol>
+      </div>
+      <p>Pour un problème reproductible, noter les étapes, le résultat attendu et le résultat observé. Le référent transmet ensuite ce compte rendu par le canal privé convenu avant le pilote. Utiliser une capture recadrée avec des données fictives si elle aide à comprendre. Un problème de confidentialité ou une réservation incohérente bloque le scénario jusqu’à correction et nouvel essai.</p>
+      <p>Mesurer manuellement les scénarios terminés sur les scénarios tentés, les réservations réussies sur les demandes, et les anomalies reproduites par plateforme. Garder le nombre d’essais à côté des résultats. Ces indicateurs sont des critères préparés pour le pilote, sans résultat annoncé ni télémétrie ajoutée.</p>
+      <p><a href="tarifs.html">Voir les offres commerciales envisagées</a></p>
+    </section>
+    <section id="protection">
+      <h2>Conditions avant tout essai sur données réelles</h2>
+      <ul class="feature-list">
+        <li>Documenter les finalités, les données nécessaires, la base légale, les responsabilités, l’hébergement approuvé, les droits et les durées de conservation avant toute saisie.</li>
+        <li>Définir avec le groupe la procédure d’information des familles, les autorisations et la responsabilité des adultes pour les trajets avec des mineurs. Garder les coordonnées d’un mineur et son adresse hors de la démo.</li>
+        <li>Utiliser un rendez-vous public pour l’essai. Écarter toute localisation continue ou publication d’adresses personnelles par défaut, et borner l’accès au groupe et au rôle nécessaires.</li>
+        <li>Vérifier les accès, la révocation d’un compte et la suppression des données de test. Procéder à une revue de confidentialité avec les responsables concernés avant d’ouvrir un essai privé réel.</li>
+      </ul>
+      <p>Sources de travail — <a href="https://www.cnil.fr/sites/cnil/files/atoms/files/cnil-guide_association.pdf">Guide RGPD de la CNIL pour les associations</a>, <a href="https://www.cnil.fr/fr/node/317">recommandation de la CNIL sur les droits des mineurs</a> et <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj?locale=fr">règlement européen, articles 5, 8, 25 et 32</a>.</p>
+      <p><a href="confidentialite.html">Lire la page de confidentialité de La Boussole</a></p>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap footer-inner"><div><strong>La Boussole</strong><br>Projet de Raphaël Flipo</div><div class="footer-links"><a href="index.html">Accueil</a><a href="confidentialite.html">Confidentialité</a><a href="mentions-legales.html">Mentions légales</a><a href="en/pilote.html" hreflang="en" lang="en">English</a></div></div></footer>
+</body>
+</html>
