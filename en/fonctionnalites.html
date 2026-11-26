@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light dark">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <title>Features for groups and carpooling | La Boussole</title>
+  <meta name="description" content="See how La Boussole handles membership, events, rides and household bookings for groups.">
+  <link rel="canonical" href="https://raphaelflipo.github.io/la-boussole/en/fonctionnalites.html">
+  <link rel="alternate" hreflang="fr" href="https://raphaelflipo.github.io/la-boussole/fonctionnalites.html">
+  <link rel="alternate" hreflang="en" href="https://raphaelflipo.github.io/la-boussole/en/fonctionnalites.html">
+  <link rel="alternate" hreflang="x-default" href="https://raphaelflipo.github.io/la-boussole/fonctionnalites.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:title" content="Features for groups and carpooling | La Boussole">
+  <meta property="og:description" content="See how La Boussole handles membership, events, rides and household bookings for groups.">
+  <meta property="og:image" content="https://raphaelflipo.github.io/la-boussole/captures/mac-tableau-1.0.png">
+  <meta property="og:url" content="https://raphaelflipo.github.io/la-boussole/en/fonctionnalites.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <script src="../theme.js"></script>
+  <link rel="stylesheet" href="../styles.css?v=4">
+  <link rel="stylesheet" href="../design.css?v=20261112-mobile1">
+  <script src="../navigation.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenu">Skip to content</a>
+  <div class="topline">
+    <a href="https://raphaelflipo.github.io/en/">Raphaël Flipo’s portfolio</a>
+    <span>La Boussole 1.0 · Private demo</span>
+    <a href="../fonctionnalites.html" hreflang="fr" lang="fr">Français</a>
+  </div>
+  <header class="wrap">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="./"><span class="mark"><svg class="compass-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="1.3"/><path d="m21.5 10.5-3.2 7.8-7.8 3.2 3.2-7.8 7.8-3.2Z" stroke="currentColor" stroke-width="1.3"/><circle cx="16" cy="16" r="1.3" fill="currentColor"/></svg></span>La Boussole</a>
+      <div class="nav-tools">
+        <button type="button" class="theme-toggle" aria-label="Change theme" hidden>◐</button>
+        <button type="button" class="menu-toggle" aria-controls="product-navigation" aria-expanded="false" hidden>Menu</button>
+      </div>
+      <div class="navlinks" id="product-navigation">
+        <a href="fonctionnalites.html">Features</a>
+        <a href="associations.html">Groups</a>
+        <a href="parcours.html">Test results</a>
+        <a href="telecharger.html">Availability</a>
+        <a href="faq.html">FAQ</a>
+        <a class="btn small" href="demo.html">Demo</a>
+      </div>
+    </nav>
+  </header>
+  <main id="contenu" tabindex="-1">
+    <section class="wrap page-head">
+      <h1>Manage members, activities and rides.</h1>
+      <p class="lede">La Boussole is designed to handle membership requests, invitations, administrator permissions, events, carpools and bookings. Availability depends on the version and platform.</p>
+      <a class="btn" href="demo.html">Try it with fictional data</a>
+    </section>
+    <section class="wrap section">
+      <div class="grid3">
+        <article class="card">
+          <h2 class="card-title">Before travelling</h2>
+          <p>Create an activity and set a meeting point. Choose the groups involved and offer rides.</p>
+          <ul><li>Departure point and destination</li><li>Outbound and return legs</li><li>Seats offered to passengers</li><li>People who still need a ride on either leg</li></ul>
+        </article>
+        <article class="card">
+          <h2 class="card-title">Booking available seats</h2>
+          <p>Enter the household’s travel needs, then choose the passengers and the leg to book. A partial cancellation frees the selected seats. If a ride is full, members can choose to join a waiting list.</p>
+          <ul><li>Named bookings for multiple household passengers on each leg</li><li>First-come, first-served waiting list that keeps groups together</li><li>In-app confirmations</li></ul>
+        </article>
+        <article class="card">
+          <h2 class="card-title">Managing repeat activities</h2>
+          <p>Duplicate an event, plan recurring activities and archive past events.</p>
+          <ul><li>Ride history</li><li>In-app reminders</li><li>Notification preferences</li></ul>
+        </article>
+      </div>
+      <p class="notice">Features are in development and the browser demo uses fictional scenarios. Planned notifications are in-app reminders. Automatic text messages and emails have not been announced.</p>
+    </section>
+    <section class="tint">
+      <div class="wrap section split">
+        <div>
+          <h2>An interface built for phones</h2>
+          <p>Version 1.0 organises the mobile app around Home, Activities, Rides, Teams and Profile. Forms open at the bottom of the screen and going back returns to the previous step. Light and dark themes and larger text are part of the iOS and Android design.</p>
+          <p>The native apps use C++ and Qt 6/QML. The web demo runs separately. <a href="parcours.html#mobile">See the mobile screens and test coverage</a>.</p>
+          <h2>Clear responsibilities</h2>
+          <p>Owners and organisers manage membership and activities. Members see rides for their own groups.</p>
+          <a href="associations.html">Explore example groups</a>
+        </div>
+        <ul class="feature-list"><li>Clear switching between groups</li><li>Limited invitations and membership approval</li><li>Enhanced privacy settings</li><li>Personal data export and account deletion</li></ul>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div><strong>La Boussole</strong><br>Published by Raphaël Flipo, Lille, France.</div>
+      <div class="footer-links">
+        <a href="https://raphaelflipo.github.io/en/">Portfolio</a><a href="confidentialite/">Privacy and legal notice</a><a href="../fonctionnalites.html" hreflang="fr" lang="fr">Français</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
