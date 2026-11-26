@@ -63,3 +63,78 @@ header.wrap{position:relative;z-index:10}
 
 .wrap.page-head{padding-left:32px;padding-right:32px}
 @media(max-width:700px){.wrap.page-head{padding-left:20px;padding-right:20px}}
+
+/* Le guide de rôle et les contrôles partagent la disposition de la démonstration. */
+.demo-sidebar select,
+.demo-controls select {
+  max-width: 100%;
+}
+
+.demo-nav,
+.ride-actions,
+.pilot-index {
+  flex-wrap: wrap;
+}
+
+#family-controls[hidden] {
+  display: none;
+}
+
+#event-departure {
+  margin-bottom: 0;
+}
+
+.pilot-index {
+  display: flex;
+  padding: 0;
+  gap: .5rem 1.25rem;
+  list-style: none;
+}
+
+.pilot-index a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.pilot-guide section + section {
+  margin-top: 2.5rem;
+}
+
+.pilot-guide section {
+  scroll-margin-top: 2rem;
+}
+
+.pilot-guide .card {
+  margin-top: 1rem;
+}
+
+.pilot-matrix {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(12rem, 100%), 1fr));
+  gap: .75rem;
+}
+
+.pilot-matrix div {
+  padding: .75rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: .75rem;
+}
+
+.pilot-matrix dt {
+  font-weight: 700;
+}
+
+.pilot-matrix dd {
+  margin: .25rem 0 0;
+}
+
+@media print {
+  .pilot-guide .pilot-index {
+    display: none;
+  }
+
+  .pilot-guide section + section {
+    margin-top: 1rem;
+  }
+}

@@ -22,6 +22,7 @@ HTML, CSS et JavaScript statiques, sans compilation ni service payant. Aucun pai
 - `theme.js` : reprend la préférence `rf-theme` enregistrée par le portfolio ; sans préférence ou sans JavaScript, le site suit le thème système. La page de compte `action.html` conserve son fonctionnement indépendant.
 - `demo.html` / `demo.js` : démonstration fictive. Aucun réseau ni compte.
 - `interet.html` / `interest.js` : fiche préparée localement, sans envoi.
+- `pilote.html` et `en/pilote.html` : préparation de l’essai privé, scénarios de démarrage, validation par appareil, retours et contrôle de confidentialité.
 - `action.html` / `action.js` : liens d’action Firebase (confirmation d’adresse et réinitialisation). Conserver les chemins, les paramètres `mode`, `oobCode`, `apiKey` et les identifiants HTML utilisés par le script.
 
 ## Ouvrir un téléchargement réel
@@ -41,6 +42,12 @@ Le script contrôle la forme de la configuration ; il ne certifie pas le contenu
 ## Prévisualiser
 
 Depuis ce dossier : `python3 -m http.server 8000`, puis ouvrir `http://localhost:8000/`. Le fonctionnement du site ne dépend pas de Python une fois hébergé sur GitHub Pages.
+
+## Vérifier la démo
+
+`node scripts/audit.mjs` contrôle les liens locaux, la présence de la politique de sécurité et la syntaxe des scripts. Avec Playwright et Chromium déjà disponibles, lancer `node scripts/demo-smoke.cjs` pour tester les pages FR et EN, huit largeurs, les sept rôles, la réservation familiale, la liste d’attente, les départs, les sous-groupes, les messages, l’adhésion et la réinitialisation. Le contrôle intercepte les ressources du site dans le navigateur de test et vérifie l’absence de nouvelles requêtes et d’écriture dans les stockages pendant les interactions.
+
+Les liens `demo.html?role=owner#administration` et `demo.html?role=parent#activites` ouvrent les scénarios locaux documentés dans le guide. Les anciennes URL continuent d’ouvrir le rôle membre par défaut.
 
 ## Déploiement
 

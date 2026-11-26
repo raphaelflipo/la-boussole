@@ -54,7 +54,8 @@ body>header{position:sticky;top:0;z-index:15;background:var(--cream);border-bott
 .visual-heading{font-weight:450;font-size:1.85rem;letter-spacing:-.045em;line-height:1.1;margin:0 0 35px}
 .visual-heading em{font:italic 400 1.2em/1.1 Instrument,Georgia,serif;letter-spacing:-.02em}
 .preview-image{display:block;cursor:zoom-in;border-radius:6px;overflow:hidden;box-shadow:0 25px 40px -20px #1b3a2b66}
-.preview-image img{width:100%;height:auto}
+.preview-image picture{display:block;aspect-ratio:2400 / 1684}
+.preview-image img{width:100%;height:100%;object-fit:contain}
 .boussole-visual figcaption{font-size:.62rem;line-height:1.8;margin:30px 0 0;max-width:410px}
 .audience{justify-content:space-between;gap:25px;border-block:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.7rem;font-weight:400}
 .section-heading{display:flex;justify-content:space-between;align-items:end;gap:70px;margin-bottom:45px}
