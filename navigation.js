@@ -34,12 +34,19 @@
       if (link.getAttribute('href') === current) link.setAttribute('aria-current', 'page');
     });
   }
+  document.addEventListener('click', event => {
+    const link = event.target.closest('a[hreflang]');
+    if (!link || link.origin !== location.origin) return;
+    if (link.hreflang === 'fr' || link.hreflang === 'en') {
+      try { localStorage.setItem('rf-language', link.hreflang); } catch (_) {}
+    }
+  });
   const theme = document.querySelector('.theme-toggle');
   const preference = matchMedia('(prefers-color-scheme: dark)');
   const isDark = () => root.dataset.theme ? root.dataset.theme === 'dark' : preference.matches;
   const update = () => {
     if (!theme) return;
-    theme.setAttribute('aria-label', isDark() ? 'Activer le thème clair' : 'Activer le thème sombre');
+    theme.setAttribute('aria-label', root.lang === 'en' ? 'Dark theme' : 'Thème sombre');
     theme.setAttribute('aria-pressed', String(isDark()));
   };
   if (theme) {

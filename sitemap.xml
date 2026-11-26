@@ -1,14 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://raphaelflipo.github.io/la-boussole/</loc></url>
-  <url><loc>https://raphaelflipo.github.io/la-boussole/telecharger.html</loc></url>
-  <url><loc>https://raphaelflipo.github.io/la-boussole/fonctionnalites.html</loc></url>
-  <url><loc>https://raphaelflipo.github.io/la-boussole/associations.html</loc></url>
-  <url><loc>https://raphaelflipo.github.io/la-boussole/tarifs.html</loc></url>
-  <url><loc>https://raphaelflipo.github.io/la-boussole/faq.html</loc></url>
-  <url><loc>https://raphaelflipo.github.io/la-boussole/demo.html</loc></url>
-  <url><loc>https://raphaelflipo.github.io/la-boussole/interet.html</loc></url>
-  <url><loc>https://raphaelflipo.github.io/la-boussole/mentions-legales.html</loc></url>
-  <url><loc>https://raphaelflipo.github.io/la-boussole/confidentialite.html</loc></url>
-  <url><loc>https://raphaelflipo.github.io/la-boussole/parcours.html</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://raphaelflipo.github.io/la-boussole/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://raphaelflipo.github.io/la-boussole/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://raphaelflipo.github.io/la-boussole/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://raphaelflipo.github.io/la-boussole/" />
+  </url>
+  <url>
+    <loc>https://raphaelflipo.github.io/la-boussole/telecharger.html</loc>
+  </url>
+  <url>
+    <loc>https://raphaelflipo.github.io/la-boussole/fonctionnalites.html</loc>
+  </url>
+  <url>
+    <loc>https://raphaelflipo.github.io/la-boussole/associations.html</loc>
+  </url>
+  <url>
+    <loc>https://raphaelflipo.github.io/la-boussole/tarifs.html</loc>
+  </url>
+  <url>
+    <loc>https://raphaelflipo.github.io/la-boussole/faq.html</loc>
+  </url>
+  <url>
+    <loc>https://raphaelflipo.github.io/la-boussole/demo.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://raphaelflipo.github.io/la-boussole/demo.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://raphaelflipo.github.io/la-boussole/en/demo.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://raphaelflipo.github.io/la-boussole/demo.html" />
+  </url>
+  <url>
+    <loc>https://raphaelflipo.github.io/la-boussole/interet.html</loc>
+  </url>
+  <url>
+    <loc>https://raphaelflipo.github.io/la-boussole/mentions-legales.html</loc>
+  </url>
+  <url>
+    <loc>https://raphaelflipo.github.io/la-boussole/confidentialite.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://raphaelflipo.github.io/la-boussole/confidentialite.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://raphaelflipo.github.io/la-boussole/en/confidentialite/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://raphaelflipo.github.io/la-boussole/confidentialite.html" />
+  </url>
+  <url>
+    <loc>https://raphaelflipo.github.io/la-boussole/parcours.html</loc>
+  </url>
+  <url>
+    <loc>https://raphaelflipo.github.io/la-boussole/en/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://raphaelflipo.github.io/la-boussole/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://raphaelflipo.github.io/la-boussole/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://raphaelflipo.github.io/la-boussole/" />
+  </url>
+  <url>
+    <loc>https://raphaelflipo.github.io/la-boussole/en/confidentialite/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://raphaelflipo.github.io/la-boussole/confidentialite.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://raphaelflipo.github.io/la-boussole/en/confidentialite/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://raphaelflipo.github.io/la-boussole/confidentialite.html" />
+  </url>
+  <url>
+    <loc>https://raphaelflipo.github.io/la-boussole/en/demo.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://raphaelflipo.github.io/la-boussole/demo.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://raphaelflipo.github.io/la-boussole/en/demo.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://raphaelflipo.github.io/la-boussole/demo.html" />
+  </url>
 </urlset>

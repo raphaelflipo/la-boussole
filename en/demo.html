@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light dark">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <title>La Boussole | Fictional demo</title>
+  <meta name="description" content="Try booking a ride, managing a group and using a waiting list with fictional data.">
+  <link rel="canonical" href="https://raphaelflipo.github.io/la-boussole/en/demo.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:title" content="La Boussole | Fictional demo">
+  <meta property="og:description" content="Plan a group event, offer seats in a car and see who still needs a lift.">
+  <meta property="og:image" content="https://raphaelflipo.github.io/la-boussole/captures/mac-tableau-1.0.png">
+  <meta property="og:url" content="https://raphaelflipo.github.io/la-boussole/en/demo.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <script src="../theme.js"></script>
+  <link rel="stylesheet" href="../styles.css?v=4">
+  <link rel="stylesheet" href="../design.css?v=20261112-mobile1">
+  <script src="../navigation.js" defer></script>
+<link rel="alternate" hreflang="fr" href="https://raphaelflipo.github.io/la-boussole/demo.html"><link rel="alternate" hreflang="en" href="https://raphaelflipo.github.io/la-boussole/en/demo.html"><link rel="alternate" hreflang="x-default" href="https://raphaelflipo.github.io/la-boussole/demo.html">
+  <script src="../demo.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenu">Skip to content</a>
+  <div class="topline"><a href="https://raphaelflipo.github.io/en/">Raphaël Flipo’s portfolio</a><span>La Boussole 1.0 · Private demo</span><a href="../demo.html" hreflang="fr" lang="fr">Français</a></div>
+  <header class="wrap">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="./">La Boussole</a>
+      <div class="nav-tools"><button type="button" class="theme-toggle" aria-label="Change theme" hidden>◐</button><button type="button" class="menu-toggle" aria-controls="product-navigation" aria-expanded="false" hidden>Menu</button></div>
+      <div class="navlinks" id="product-navigation"><a "href="./#features">Features</a><a "href="./#availability">Availability</a><a "href="./#faq">FAQ</a><a class="btn small" href="./#demo">Demo</a></div>
+    </nav>
+  </header>
+  <main tabindex="-1" id="contenu" class="wrap"><div class="page-head"><span class="eyebrow">Guided demo</span><h1>Try booking a seat<br><em>in a fictional group.</em></h1><p class="lede">Play a fictional member. Choose a group, book a seat and cancel it. Switch to the Organiser role to try managing the group.</p></div><div class="demo-guide"><span>Choose a group</span><span>Book a seat</span><span>Switch groups and return</span></div><noscript><div class="notice">Enable JavaScript to try booking seats. The demo runs locally in your browser.</div></noscript><div class="demo-shell"><aside class="demo-sidebar" aria-label="Demo controls"><strong>My fictional group</strong><div><label for="organization">Group</label><select id="organization"><option value="alpha">Les Sentiers · scout group</option><option value="beta">Élan Sport · sports club</option><option value="gamma">L’Atelier · local association</option></select></div><div><label for="persona">Your fictional role</label><select id="persona"><option value="member">Nina · member</option><option value="owner">Organiser</option></select></div><div class="demo-nav"><a href="#activites">Activities</a><a href="#administration">Group settings</a><a href="#retours">Feedback</a></div><p class="small">The people and locations are fictional. The demo runs independently in this browser.</p><button class="btn small secondary" id="reset" type="button">Reset the demo</button></aside><div class="demo-main"><div id="demo-status" class="demo-status" role="status" aria-live="polite">Choose an available seat to try the demo.</div><header class="demo-top"><div class="flex"><span class="eyebrow" id="org-type">Fictional scout group</span><span class="pill" id="plan-name">Plan · Association</span></div><h2 id="org-name">Les Sentiers</h2><p id="org-description">A fictional group planning an outdoor day.</p></header><div class="stats"><div class="stat"><span>Fictional members</span><strong id="members-count">12</strong></div><div class="stat"><span>Available seats</span><strong id="available-count">0</strong></div><div class="stat"><span>Your bookings</span><strong id="booking-count">0</strong></div></div><section id="activites" aria-labelledby="activity-title"><div class="flex"><h3 class="demo-section-title" id="activity-title">Rides for the next activity</h3><span class="pill gold">Fictional public locations</span></div><div class="demo-controls"><label for="event-select" class="control-label">Choose a fictional activity</label><select id="event-select"></select><p class="small" id="event-details"></p></div><div id="rides"></div><section class="demo-controls" aria-labelledby="ride-title"><h3 id="ride-title">Offer a fictional ride</h3><p class="small">Pick a location from the demo’s list.</p><div class="controls-row"><label for="origin">Pickup<select id="origin"><option>Village square (fictional)</option><option>Stadium car park (fictional)</option><option>Community centre (fictional)</option></select></label><label for="direction">Direction<select id="direction"><option value="outbound">Outbound</option><option value="return">Return</option></select></label><label for="capacity">Seats offered<select id="capacity"><option value="1">1 seat</option><option value="2" selected>2 seats</option><option value="3">3 seats</option></select></label><button class="btn" id="add-ride" type="button">Add the ride</button></div></section></section><section id="administration" class="demo-controls" aria-labelledby="admin-title"><h3 id="admin-title">Organiser tools</h3><p class="small" id="admin-hint">Select the Organiser role to try these fictional actions.</p><p class="demo-people" id="demo-members"></p><div class="controls-row"><button class="btn small secondary" id="add-event" type="button">Add a fictional activity</button><button class="btn small secondary" id="invite" type="button">Create a fictional invitation</button><button class="btn small secondary" id="approve" type="button">Approve the fictional member</button></div><p class="small" id="invite-status">There are no invitations in this group.</p><p class="small" id="usage"></p></section><section aria-labelledby="inbox-title"><h3 id="inbox-title" class="demo-section-title">Your fictional notifications</h3><ul id="demo-notifications" class="feature-list" aria-live="polite"></ul></section><section id="retours"><h3 class="demo-section-title">Try submitting feedback</h3><p class="small">A preset message is added locally in this demo.</p><div class="demo-feedback"><button class="btn small secondary" id="feedback" type="button">Simulate “I can find rides easily”</button><span id="feedback-count">No fictional feedback yet.</span></div></section></div></div><div class="notice"><strong>Your changes stay on this page.</strong> Reloading resets the demo. Each group keeps its own fictional scenario while the page is open.</div><div class="actions"><a class="btn" href="./#availability">Platform availability</a><a class="btn secondary" href="./#faq">Read the FAQ</a></div></main>
+  <footer class="footer"><div class="wrap footer-inner"><div><strong>La Boussole</strong><br>Published by Raphaël Flipo, Lille, France.</div><div class="footer-links"><a href="https://raphaelflipo.github.io/en/">Portfolio</a><a href="confidentialite/">Privacy and legal notice</a><a href="../demo.html" hreflang="fr" lang="fr">Français</a></div></div></footer>
+</body>
+</html>
