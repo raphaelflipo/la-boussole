@@ -1,0 +1,19 @@
+.page-head { border-bottom: 1px solid currentColor; border-color: color-mix(in srgb, currentColor 18%, transparent); }
+.demo-shell { margin-block-start: 1.5rem; gap: clamp(.8rem, 3vw, 2rem); }
+.demo-sidebar {
+  border-inline-start: 3px solid #b38235; padding-inline-start: clamp(.6rem, 2vw, 1.3rem);
+}
+.demo-main > section {
+  border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+  border-radius: 1.1rem; padding: clamp(.9rem, 3vw, 2rem);
+}
+.demo-nav { display: flex; flex-wrap: wrap; gap: .3rem; }
+.demo-nav a, .demo-shell :is(button, select) { min-height: 44px; }
+.demo-nav a { display: inline-flex; align-items: center; }
+.demo-shell :is(a, button, select):focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+.demo-status { font-variant-numeric: tabular-nums; }
+@media (max-width: 680px) {
+  .demo-sidebar { border-inline-start: 0; padding-inline-start: 0; }
+  .demo-main { min-width: 0; }
+  .demo-controls :is(button, select) { max-width: 100%; }
+}
